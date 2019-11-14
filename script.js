@@ -12,9 +12,12 @@ function isPythagoreanTheorem(a,b,c){
     }else{console.log('false')}
   
 }
-isPythagoreanTheorem(3, 3, 4.24);
-//isPythagoreanTheorem(4, 8 , 9.3)
+//isPythagoreanTheorem(6, 8, 10);
+isPythagoreanTheorem(2, 8 , 16)
 
-function gentleSum(){
+function gentleSum(a,b){
+    if(typeof a=='number'||typeof b=='number'){
+        return a+b
+    }
 
 }
