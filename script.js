@@ -28,3 +28,4 @@ function gentleSum(a,b){
 
 gentleSum('234asfasf', '53asfa');
 gentleSum('sd234asfasf', '53asfa');
+gentleSum('234asfasf', 'nmn53asfa');
