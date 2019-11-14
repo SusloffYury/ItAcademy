@@ -17,8 +17,8 @@ isPythagoreanTheorem(6, 8, 10);
 isPythagoreanTheorem(2, 8 , 16)
 
 function gentleSum(a,b){
-   var flag=true;
-  if(flag==isNaN(parseInt(a)+parseInt(b))){
+  
+  if(isNaN(parseInt(a)+parseInt(b))){
     console.log( 'please enter valid data');
   }else{console.log(parseInt(a)+parseInt(b))}
 
