@@ -20,7 +20,9 @@ function gentleSum(a,b){
   
   if(isNaN(parseInt(a)+parseInt(b))){
     console.log( 'please enter valid data');
-  }else{console.log(parseInt(a)+parseInt(b))}
+  }else{
+    console.log(parseInt(a)+parseInt(b))
+  }
 
   }
   
