@@ -47,16 +47,23 @@ if (key in obj){
 deleteObjectValueByKey({name:'Tanya', age:15},"age");
 
 function printAllEvenNumbers(){
-   let i= prompt('Введите любое число больше 0');
-   if(typeof parseInt(i) =='number'){
-     for(let b = 0;b <= i; b++) {
-     if (b%2==0){
-       alert(b);
+  let i= prompt('Введите любое число больше 0');
+     while(typeof parseInt(i)!='number'){
+    alert('не число');
+    let i= prompt('Введите любое число больше 0');
     }
- }
-}else{   alert('не число');
+  
+if(typeof parseInt(i)=='number'){ 
+  for(let b = 0;b <= i; b++) {
+    if (b%2==0){
+      alert(b); 
+  
 
 }
 
 }
+}
+}
+
 printAllEvenNumbers();
+
