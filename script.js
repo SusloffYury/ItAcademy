@@ -34,17 +34,19 @@
 
 
 function deleteObjectValueByKey(obj, key){
-
-if (key in obj){
-  delete(obj.key);
-  
  
-}else {console.log('null')
-}
-
+ 
+  this.obj=obj;
+  this.key=key;
+  if(key in obj){
+ delete obj.key;
+ return obj;
+}else return null;
+ 
 }  
 
-deleteObjectValueByKey({name:'Tanya', age:15},"age");
+
+//console.log(deleteObjectValueByKey({name:'Tanya', age:15},"name"));
 
 function printAllEvenNumbers(){
   let i= prompt('Введите любое число больше 0');
@@ -65,5 +67,24 @@ if(typeof parseInt(i)=='number'){
 }
 }
 
-printAllEvenNumbers();
+//printAllEvenNumbers();
 
+function  checkUser(){
+  let age = confirm(' are you 18 years old');
+  let name = prompt('what is you name')
+    if(age){
+    function greeting(){
+    alert("Welcom"+name);
+    }
+  }
+  greeting();
+}
+checkUser();
+
+function sum(x)(y)=>{
+  let a =x;
+  return function(){
+    a + y;
+  }
+}
+console.log(sum(2)(3));
