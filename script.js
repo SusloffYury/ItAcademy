@@ -37,4 +37,12 @@ function descSort(arr) {
 return arr.sort(function compareNumeric(a,b){return a-b});
 }
 
-console.log(descSort([100, 5, -2, - 10000, 0, 53]));
+//console.log(descSort([100, 5, -2, - 10000, 0, 53]));
+
+function independentSort(array){
+  console.log(array);
+ return array.slice().sort();
+   
+}
+
+console.log(independentSort(["HTML", "JavaScript", "CSS"]));
