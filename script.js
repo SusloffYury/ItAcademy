@@ -33,58 +33,8 @@
 // gentleSum('234asfasf', 'nmn53asfa');
 
 
-function deleteObjectValueByKey(obj, key){
- 
- 
-  this.obj=obj;
-  this.key=key;
-  if(key in obj){
- delete obj.key;
- return obj;
-}else return null;
- 
-}  
-
-
-//console.log(deleteObjectValueByKey({name:'Tanya', age:15},"name"));
-
-function printAllEvenNumbers(){
-  let i= prompt('Введите любое число больше 0');
-     while(typeof parseInt(i)!='number'){
-    alert('не число');
-    let i= prompt('Введите любое число больше 0');
-    }
-  
-if(typeof parseInt(i)=='number'){ 
-  for(let b = 0;b <= i; b++) {
-    if (b%2==0){
-      alert(b); 
-  
-
+function descSort(arr) {
+return arr.sort(function compareNumeric(a,b){return a-b});
 }
 
-}
-}
-}
-
-//printAllEvenNumbers();
-
-function  checkUser(){
-  let age = confirm(' are you 18 years old');
-  let name = prompt('what is you name')
-    if(age){
-    function greeting(){
-    alert("Welcom"+name);
-    }
-  }
-  greeting();
-}
-checkUser();
-
-function sum(x)(y)=>{
-  let a =x;
-  return function(){
-    a + y;
-  }
-}
-console.log(sum(2)(3));
+console.log(descSort([100, 5, -2, - 10000, 0, 53]));
