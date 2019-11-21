@@ -60,8 +60,45 @@ function getMaxSubSum(arr){
 
 
 
-console.log(getMaxSubSum([-1, 2, 3, -9])) // = 5 
-console.log(getMaxSubSum([2, -1, 2, 3, -9])) // = 11
-console.log(getMaxSubSum([-2, -1, 1, 2])) // = 3
-console.log(getMaxSubSum([100, -9, 2, -3, 5])) // = 100
+// console.log(getMaxSubSum([-1, 2, 3, -9])) // = 5 
+// console.log(getMaxSubSum([2, -1, 2, 3, -9])) // = 11
+// console.log(getMaxSubSum([-2, -1, 1, 2])) // = 3
+// console.log(getMaxSubSum([100, -9, 2, -3, 5])) // = 100
 
+function Calculator(){
+ 
+  this.calculate = function(str){
+    
+  let number = [];
+  number = str.split(' ');
+    let num_1 = parseInt(number[0])
+    let num_2 = parseInt(number[2])
+    if(number[1] == '+'){
+      return num_1 + num_2;
+      }
+      if(number[1] == '-'){
+        return num_1 - num_2
+      }
+    }
+        this.addNewMethod = function(sign, a, b){
+          if(sign == '*'){
+            return +a * +b
+          }
+            if(sign == '/'){
+              return +a /+b
+            }
+          
+        }
+
+
+}
+
+let calc = new Calculator();
+let sum = calc.calculate('10 - 3');
+let subtraction = (calc.calculate('4 + 3'));
+let result = calc.addNewMethod('/', 4 ,2);
+let divide =  calc.addNewMethod('*', 4 ,2);
+alert(result);
+alert(divide);
+alert(sum);
+alert(subtraction);
