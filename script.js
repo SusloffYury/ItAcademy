@@ -45,25 +45,29 @@ function independentSort(array){
    
 }
 
-console.log(independentSort(["HTML", "JavaScript", "CSS"]));
+//console.log(independentSort(["HTML", "JavaScript", "CSS"]));
+
 
 function getMaxSubSum(arr){
   
-   let a = 0; 
-    for(let i = 0;i < arr.length; i++ ){
-      if(arr[i] > 0 && arr[i+1] > 0 ){
-       a +=arr[i] + arr[i + 1]
-      }
-    }
-    return a;
+   let maxSum = 0; 
+   let tempSum = 0;
+    arr.forEach(function(el){
+      tempSum += el;
+      maxSum = Math.max(maxSum, tempSum);
+      if(tempSum < 0){
+        tempSum = 0;
+      } 
+    });
+    return maxSum;
 }
 
 
 
-// console.log(getMaxSubSum([-1, 2, 3, -9])) // = 5 
-// console.log(getMaxSubSum([2, -1, 2, 3, -9])) // = 11
-// console.log(getMaxSubSum([-2, -1, 1, 2])) // = 3
-// console.log(getMaxSubSum([100, -9, 2, -3, 5])) // = 100
+console.log(getMaxSubSum([-1, 2, 3, -9])) // = 5 
+console.log(getMaxSubSum([2, -1, 2, 3, -9])) // = 11
+console.log(getMaxSubSum([-2, -1, 1, 2])) // = 3
+console.log(getMaxSubSum([100, -2, 2, -3, 5])) // = 100
 
 function Calculator(){
   this.methods = {
@@ -89,11 +93,17 @@ function Calculator(){
        
       }
 
+      function summury(a){
+         return function(b){
+         return  a + b;
+         }
+      }
+        //console.log(summury(6)(6));
 
   let calc = new Calculator();
   let sum = calc.calculate('10 + 3');
     calc.addNewMethod("*", (a, b)=>a * b);
     let mult = calc.calculate('20 * 3');
 
-      console.log(sum);
-      console.log(mult);
+     // console.log(sum);
+      //console.log(mult);
