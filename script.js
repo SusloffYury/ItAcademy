@@ -66,39 +66,34 @@ function getMaxSubSum(arr){
 // console.log(getMaxSubSum([100, -9, 2, -3, 5])) // = 100
 
 function Calculator(){
+  this.methods = {
+    "+": (a, b)=> a + b,
+    "-": (a, b)=> a - b
+  };
  
   this.calculate = function(str){
-    
-  let number = [];
-  number = str.split(' ');
-    let num_1 = parseInt(number[0])
-    let num_2 = parseInt(number[2])
-    if(number[1] == '+'){
-      return num_1 + num_2;
-      }
-      if(number[1] == '-'){
-        return num_1 - num_2
-      }
-    }
-        this.addNewMethod = function(sign, a, b){
-          if(sign == '*'){
-            return +a * +b
+      let number  = str.split(' ');
+        let num_1 = +number[0]
+        let oper = number[1]
+        let num_2 = +number[2]
+
+          if(!this.methods[oper] || isNaN(num_1) || isNaN(num_2) ){
+            return NaN;
           }
-            if(sign == '/'){
-              return +a /+b
-            }
-          
+          return this.methods[oper](num_1 , num_2);
         }
+        this.addNewMethod = function(name, func){
+         return this.methods[name] = func
+          
+        };
+       
+      }
 
 
-}
+  let calc = new Calculator();
+  let sum = calc.calculate('10 + 3');
+    calc.addNewMethod("*", (a, b)=>a * b);
+    let mult = calc.calculate('20 * 3');
 
-let calc = new Calculator();
-let sum = calc.calculate('10 - 3');
-let subtraction = (calc.calculate('4 + 3'));
-let result = calc.addNewMethod('/', 4 ,2);
-let divide =  calc.addNewMethod('*', 4 ,2);
-alert(result);
-alert(divide);
-alert(sum);
-alert(subtraction);
+      console.log(sum);
+      console.log(mult);
