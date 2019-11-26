@@ -27,17 +27,14 @@ function sumSalaries(salaries){
   
 
 function printNumbers(from, to){ 
-  
-      let time = from;
- 
-  let print = setInterval(function(){
-    console.log(time);
-    if(time == to){
-      clearInterval(print);
-    }
+        let time = from;
+   let countNumber = setInterval(function(){
+      console.log(time);
+      if(time == to){
+        clearInterval(countNumber);
+      }
     time++;
-  },1000)
-  
+  }, 1000);
 }
 
 let salaries = {
