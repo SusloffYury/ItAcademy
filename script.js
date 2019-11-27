@@ -6,10 +6,6 @@ function sumSalaries(salaries){
     return Object.values(salaries).reduce((a, b)=> a+b, 0);
   }
 
- 
-
-
-
   function topSalary(salaries){
     let maxSal = 0;
     let maxName = null;
@@ -37,6 +33,37 @@ function printNumbers(from, to){
   }, 1000);
 }
 
+function printNumbersRec(from, to) {
+  let time = from;
+
+  setTimeout(function timer() {
+    console.log(time);
+    if (time < to) {
+      setTimeout(timer, 1000);
+    }
+    time++;
+  }, 1000);
+}
+
+function timers(){
+  let i = 0;
+  setTimeout(()=>console.log(i), 10000);
+  for(let j = 0; j < 1000000000; j++){
+    i++;
+  }
+}
+
+ function aclean(arr){
+   let map = new Map();
+    for(let string of arr){
+     let key =  string.split("").sort().join("");
+     map.set(key, string);
+    }
+  return Array.from(map.values());
+   
+ }
+ let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+ console.log(aclean(arr));
 let salaries = {
   "John": 100,
   "Pete": 300,
@@ -44,5 +71,7 @@ let salaries = {
 };
 //console.log(sumSalaries(salaries));
 //console.log(topSalary(salaries));
-printNumbers(5, 10);
+//printNumbers(5, 10);
+//printNumbersRec(1, 6);
+timers();
 
