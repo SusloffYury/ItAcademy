@@ -19,7 +19,12 @@ function sumSalaries(salaries){
      return maxName;
     } 
      
-     
+     function TopSalaryIt(salaries){
+        let cell = Object.entries(salaries)
+        .sort(function([ ,salA ],[ ,salB ]){ return salA - salB}) 
+        .pop();
+        return cell[0];
+     }
   
 
 function printNumbers(from, to){ 
@@ -46,10 +51,10 @@ function printNumbersRec(from, to) {
 }
 
 function timers(){
-  let i = 0;
-  setTimeout(()=>console.log(i), 10000);
-  for(let j = 0; j < 1000000000; j++){
-    i++;
+    let i = 0;
+    setTimeout(()=>console.log(i), 10000);
+    for(let j = 0; j < 1000000000; j++){
+      i++;
   }
 }
 
@@ -63,7 +68,7 @@ function timers(){
    
  }
  let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
- console.log(aclean(arr));
+ 
 let salaries = {
   "John": 100,
   "Pete": 300,
@@ -73,5 +78,6 @@ let salaries = {
 //console.log(topSalary(salaries));
 //printNumbers(5, 10);
 //printNumbersRec(1, 6);
-timers();
-
+//timers();
+//console.log(aclean(arr));
+console.log(TopSalaryIt(salaries));
