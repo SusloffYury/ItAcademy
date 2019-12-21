@@ -6,9 +6,8 @@ let data = {
 
 
   function tagCreat(obj){
-  let array = Object.entries(obj);
-     
-    array.map((el)=>{
+   Object.entries(obj)
+     .map((el)=>{
         ol = document.createElement('ol')
         ol.className = el[0] 
         ol.innerHTML = el[0]
