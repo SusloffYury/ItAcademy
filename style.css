@@ -20,13 +20,7 @@
   padding: 10px;
 }
 
-.title{
+.conteinerBut{
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  font-size: 25px;
-  padding: 5px;
-  color: red;
-
+  justify-content: center;
 }
-

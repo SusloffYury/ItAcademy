@@ -20,26 +20,26 @@ const creatSuperHeroesHTML =({name, images: { lg: heroImage}})=>{
     return document.querySelectorAll('.superhero')
     };
 
-  const creatGallery =(galleryArray)=>{
-    let arrayIndex = 0;
-    setInterval(() => {
-      if(!galleryArray[arrayIndex]){
-        arrayIndex = 0;
-        galleryArray[galleryArray.length - 1].classList.toggle('superheroVisible')
-      }
+  // const creatGallery =(galleryArray)=>{
+  //   let arrayIndex = 0;
+  //   setInterval(() => {
+  //     if(!galleryArray[arrayIndex]){
+  //       arrayIndex = 0;
+  //       galleryArray[galleryArray.length - 1].classList.toggle('superheroVisible')
+  //     }
 
-      if(galleryArray[arrayIndex - 1]){
-        galleryArray[arrayIndex - 1].classList.toggle('superheroVisible')
+  //     if(galleryArray[arrayIndex - 1]){
+  //       galleryArray[arrayIndex - 1].classList.toggle('superheroVisible')
        
-    }
-      if(galleryArray[arrayIndex]){
-             galleryArray[arrayIndex ].classList.toggle('superheroVisible')
-             arrayIndex++;
-      }
-    }, 1000);
+  //   }
+  //     if(galleryArray[arrayIndex]){
+  //            galleryArray[arrayIndex ].classList.toggle('superheroVisible')
+  //            arrayIndex++;
+  //     }
+  //   }, 1000);
     
 
-  } 
+ // } 
 
  
  super_heroes().then(super_heroes=>{
