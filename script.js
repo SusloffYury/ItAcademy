@@ -1,5 +1,6 @@
 //https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/all.json
 const SUPER_HEROES_CONT = document.querySelector('.super_heroes')
+
 let super_heroes=()=>{
 return fetch("https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/all.json")
  .then(response=>response.json())
@@ -7,7 +8,7 @@ return fetch("https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/all.json")
     heroes_array.length = 10;
     return heroes_array;});
  }
-const creatSuperHeroesHTML =({name, images: { lg: heroImage}})=>{
+const creatSuperHeroesHTML =({images: { lg: heroImage}})=>{
   let div = document.createElement('div');
      div.className = 'superhero';
      let image = document.createElement('img')
@@ -16,36 +17,70 @@ const creatSuperHeroesHTML =({name, images: { lg: heroImage}})=>{
       SUPER_HEROES_CONT.append(div); 
    
 };
-    const createArray =()=>{
-    return document.querySelectorAll('.superhero')
-    };
+  let creatGalleryArr =()=>{
+     
+     return document.querySelectorAll('.superhero')
+        
+  }
+         
 
-  // const creatGallery =(galleryArray)=>{
-  //   let arrayIndex = 0;
-  //   setInterval(() => {
-  //     if(!galleryArray[arrayIndex]){
-  //       arrayIndex = 0;
-  //       galleryArray[galleryArray.length - 1].classList.toggle('superheroVisible')
-  //     }
+      let button = (galleryArray)=>{
+         let buttNext = document.getElementById('next')
+         let buttPrev = document.getElementById('prev') 
+            
+         let arrayIndex = 0;
+           // galleryArray[arrayIndex].classList.toggle('superheroVisible')
+          let next =()=>{
+                      
+                     if(galleryArray[arrayIndex - 1]){
+                        galleryArray[arrayIndex - 1].classList.toggle('superheroVisible')
+                     }
 
-  //     if(galleryArray[arrayIndex - 1]){
-  //       galleryArray[arrayIndex - 1].classList.toggle('superheroVisible')
-       
-  //   }
-  //     if(galleryArray[arrayIndex]){
-  //            galleryArray[arrayIndex ].classList.toggle('superheroVisible')
-  //            arrayIndex++;
-  //     }
-  //   }, 1000);
+                        if(galleryArray[arrayIndex]){
+                           galleryArray[arrayIndex].classList.toggle('superheroVisible')
+                           arrayIndex++;
+                          
+                        }
+
+                        if(!galleryArray[arrayIndex + 1]){
+                           arrayIndex = 0;
+                         }
+                           
+                 
+      };
+      buttNext.addEventListener('click', next)
+      buttPrev.addEventListener('click', prev)
+     }
+      
+      
+
+super_heroes().then(super_heroes=>{
+   super_heroes.map(creatSuperHeroesHTML)
+   }).then((galleryArray)=>creatGalleryArr(galleryArray))
+   .then((galleryArray)=>button(galleryArray))
+  
+   
+      
+             
+        
+           
+
+     
+          
     
+ 
+ 
+  
+ 
+  
+ 
 
- // } 
 
  
- super_heroes().then(super_heroes=>{
-  super_heroes.map(creatSuperHeroesHTML)
- }).then(createArray)
- .then((galleryArray)=>creatGallery(galleryArray))
+
+
+
+
  
 
 
